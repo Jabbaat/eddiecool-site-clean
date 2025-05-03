@@ -47,6 +47,40 @@
       50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.7; }
       100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
     }
+
+    .menu {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Mobiel: menu standaard verbergen en togglebaar maken */
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      .menu.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
@@ -64,7 +98,7 @@
     <li><a href="ai_gallery.html">Gallery</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
-   </ul>
+  </ul>
 </nav>
 
 <h1 style="text-align:center; margin-top:40px;">Featured Project</h1>
@@ -86,32 +120,43 @@
   </video>
 </div>
 
+<!-- Plaats je script hier onderaan -->
 <script>
-  // Eerste video
-  const playBtn = document.getElementById("custom-play");
-  const thumbnail = document.getElementById("video-thumbnail");
-  const video = document.getElementById("video-player");
+  document.addEventListener("DOMContentLoaded", function() {
+    // Hamburger menu toggle
+    const hamburger = document.getElementById("hamburger-menu");
+    const menu = document.querySelector(".menu");
 
-  playBtn.addEventListener("click", function () {
-    thumbnail.style.display = "none";
-    playBtn.style.display = "none";
-    video.style.display = "block";
-    video.play();
-  });
+    hamburger.addEventListener("click", function () {
+      menu.classList.toggle("show");
+    });
 
-  // Tweede video
-  const playBtn2 = document.getElementById("custom-play-2");
-  const thumbnail2 = document.getElementById("video-thumbnail-2");
-  const video2 = document.getElementById("video-player-2");
+    // Eerste video
+    const playBtn = document.getElementById("custom-play");
+    const thumbnail = document.getElementById("video-thumbnail");
+    const video = document.getElementById("video-player");
 
-  playBtn2.addEventListener("click", function () {
-    thumbnail2.style.display = "none";
-    playBtn2.style.display = "none";
-    video2.style.display = "block";
-    video2.play();
+    playBtn.addEventListener("click", function () {
+      thumbnail.style.display = "none";
+      playBtn.style.display = "none";
+      video.style.display = "block";
+      video.play();
+    });
+
+    // Tweede video
+    const playBtn2 = document.getElementById("custom-play-2");
+    const thumbnail2 = document.getElementById("video-thumbnail-2");
+    const video2 = document.getElementById("video-player-2");
+
+    playBtn2.addEventListener("click", function () {
+      thumbnail2.style.display = "none";
+      playBtn2.style.display = "none";
+      video2.style.display = "block";
+      video2.play();
+    });
   });
 </script>
 
-
 </body>
 </html>
+

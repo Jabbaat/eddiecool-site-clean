@@ -337,4 +337,37 @@ p {
 * {
   box-sizing: border-box;
 }
+.menu {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Mobiel: menu standaard verbergen en togglebaar maken */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
 
