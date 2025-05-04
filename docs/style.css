@@ -347,3 +347,16 @@ p {
 * {
   box-sizing: border-box;
 }
+/* Fullscreen fix alleen voor mobiel */
+@media (max-width: 768px) {
+  /* Voorkom fullscreen op mobiel door een vaste breedte en hoogte te geven */
+  .video-container {
+    max-width: 100%; /* Zorg dat het niet breder wordt dan de container */
+    padding-top: 56.25%; /* 16:9 ratio */
+  }
+
+  /* Zorg ervoor dat de video gewoon binnen de container past zonder fullscreen */
+  .video-container video {
+    object-fit: contain; /* Zorg ervoor dat de video binnen de container past zonder in fullscreen te gaan */
+  }
+}
