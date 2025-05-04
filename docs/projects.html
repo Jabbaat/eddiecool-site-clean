@@ -111,7 +111,13 @@
      video2.play();
    });
  </script>
- 
+ <script>
+  document.getElementById("hamburger-menu").addEventListener("click", function() {
+      var menu = document.querySelector(".menu");
+      menu.classList.toggle("active");
+  });
+</script>
+
  
  </body>
  </html>
