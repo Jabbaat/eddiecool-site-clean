@@ -362,9 +362,10 @@ p {
     border-radius: 8px;
   }
 
-  .menu.show {
+  .menu.active {
     display: flex;
   }
+  
 
   .hamburger {
     display: block;
