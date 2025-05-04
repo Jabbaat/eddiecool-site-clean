@@ -17,7 +17,8 @@
           </div>
           
         <span class="hamburger" id="hamburger-menu">&#9776;</span>
-        <ul class="menu">
+        <ul class="menu" id="nav-menu">
+
           <li><a href="index.html">Home</a></li>
           <li><a href="projects.html">Projects</a></li> <!-- nieuwe link -->
           <li><a href="ai_gallery.html">Gallery</a></li>
@@ -85,7 +86,15 @@
         menu.classList.toggle("active");
     });
 </script>
-    
+<script>
+  const hamburger = document.getElementById('hamburger-menu');
+  const menu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
+   
 </body>
 
 </html>
