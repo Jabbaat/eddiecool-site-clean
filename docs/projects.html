@@ -85,7 +85,15 @@
      Your browser does not support the video tag.
    </video>
  </div>
- 
+ <div class="single-project">
+  <img src="images/fear-thumb.jpg" alt="Fear Thumbnail" class="video-poster" id="video-thumbnail-3">
+  <button class="custom-play-button" id="custom-play-3">&#9658;</button>
+  <video id="video-player-3" controls>
+    <source src="video/fear_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
  <script>
    // Eerste video
    const playBtn = document.getElementById("custom-play");
@@ -110,6 +118,20 @@
      video2.style.display = "block";
      video2.play();
    });
+
+   // Derde video
+const playBtn3 = document.getElementById("custom-play-3");
+const thumbnail3 = document.getElementById("video-thumbnail-3");
+const video3 = document.getElementById("video-player-3");
+
+playBtn3.addEventListener("click", function () {
+  thumbnail3.style.display = "none";
+  playBtn3.style.display = "none";
+  video3.style.display = "block";
+  video3.play();
+});
+
+   
  </script>
  <script>
   document.getElementById("hamburger-menu").addEventListener("click", function() {
